@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos - Amazônia Criativa</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/produtos.css">
+    <link rel="stylesheet" href="css/carrinho.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2><a href="index.html">Amazônia Criativa</a></h2>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="index.html#sobre">Sobre</a></li>
+                    <li><a href="produtos.html" class="active">Produtos</a></li>
+                    <li><a href="index.html#servicos">Serviços</a></li>
+                    <li><a href="index.html#contato">Contato</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Produtos -->
+    <section class="produtos-hero">
+        <div class="container">
+            <h1>Nossos Produtos</h1>
+            <p>Descubra nossa linha completa de produtos sustentáveis inspirados na Amazônia</p>
+        </div>
+    </section>
+
+    <!-- Filtros -->
+    <section class="filtros">
+        <div class="container">
+            <div class="filtros-container">
+                <button class="filtro-btn active" data-categoria="todos">Todos</button>
+                <button class="filtro-btn" data-categoria="alimentos">Livros Digitais</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Produtos Detalhados -->
+    <section class="produtos-detalhados">
+        <div class="container">
+            <div class="produtos-grid">
+                <!-- Alimentos -->
+                <div class="produto-item" data-categoria="alimentos">
+                    <div class="produto-imagem">
+                        <img src="images/produtos/dieta-low-carb.jpg" alt="Dieta Low Carb" class="produto-img-real">
+                        <div class="produto-overlay">
+                            <button class="ver-detalhes">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="produto-info">
+                        <h3>Dieta Low Carb</h3>
+                        <p class="categoria">Guia Nutricional</p>
+                        <p class="descricao">Guia completo para uma alimentação saudável com baixo carboidrato.</p>
+                        <div class="preco">R$ 19,99</div>
+                        <a href="https://pay.herospark.com/segredos-dieta-lowcarb-495615" target="_blank" class="comprar-btn" data-produto-externo="true">Comprar</a>
+                    </div>
+                </div>
+
+                <div class="produto-item" data-categoria="alimentos">
+                    <div class="produto-imagem">
+                        <img src="images/produtos/psicologia-riqueza-invisivel.jpg" alt="A Psicologia da Riqueza Invisível" class="produto-img-real">
+                        <div class="produto-overlay">
+                            <button class="ver-detalhes">Ver Detalhes</button>
+                        </div>
+                    </div>
+                    <div class="produto-info">
+                        <h3>A Psicologia da Riqueza Invisível</h3>
+                        <p class="categoria">Livro Digital</p>
+                        <p class="descricao">Como a humildade financeira gera liberdade e prosperidade.</p>
+                        <div class="preco">R$ 20,99</div>
+                        <a href="https://pay.herospark.com/a-psicologia-da-riqueza-invisivel-495714" target="_blank" class="comprar-btn" data-produto-externo="true">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Produto -->
+    <div id="produto-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-imagem">
+                    <div class="placeholder">Imagem do Produto</div>
+                </div>
+                <div class="modal-info">
+                    <h2 id="modal-titulo">Nome do Produto</h2>
+                    <p id="modal-categoria">Categoria</p>
+                    <div id="modal-preco" class="preco-modal">R$ 0,00</div>
+                    <p id="modal-descricao">Descrição detalhada do produto...</p>
+                    <div class="modal-beneficios">
+                        <h4>Benefícios:</h4>
+                        <ul id="modal-beneficios-lista">
+                            <li>Benefício 1</li>
+                            <li>Benefício 2</li>
+                            <li>Benefício 3</li>
+                        </ul>
+                    </div>
+                    <button class="comprar-btn-modal">Comprar Agora</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Amazônia Criativa</h3>
+                    <p>Inovação sustentável inspirada na Amazônia</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="index.html#sobre">Sobre</a></li>
+                        <li><a href="produtos.html">Produtos</a></li>
+                        <li><a href="index.html#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociais</h4>
+                    <div class="social-links">
+                        <a href="#">Facebook</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Amazônia Criativa. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/carrinho.js"></script>
+    <script src="js/produtos.js"></script>
+</body>
+</html>
