@@ -1,0 +1,584 @@
+/* Estilos específicos para página de produtos */
+
+.logo a {
+    text-decoration: none;
+    color: #2d5016;
+}
+
+.nav-menu .active {
+    color: #2d5016;
+    font-weight: 600;
+}
+
+/* Hero Produtos */
+.produtos-hero {
+    background: linear-gradient(135deg, #1a3a0f 0%, #2d5016 50%, #4a7c59 100%);
+    color: white;
+    padding: 140px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.produtos-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 107, 53, 0.15) 0%, transparent 70%);
+    animation: pulse 6s ease-in-out infinite;
+}
+
+.produtos-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+    animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.produtos-hero p {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Filtros */
+.filtros {
+    padding: 40px 0;
+    background: #f8f9fa;
+}
+
+.filtros-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    background: white;
+    border: 2px solid #e0e0e0;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filtro-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(45, 80, 22, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.filtro-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.filtro-btn:hover,
+.filtro-btn.active {
+    background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+    color: white;
+    border-color: #2d5016;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(45, 80, 22, 0.3);
+}
+
+/* Produtos Detalhados */
+.produtos-detalhados {
+    padding: 60px 0;
+}
+
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.produto-item {
+    background: white;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+.produto-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ff6b35, #2d5016, #4a7c59);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    z-index: 10;
+}
+
+.produto-item:hover::before {
+    transform: scaleX(1);
+}
+
+.produto-item:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}
+
+.produto-imagem {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.produto-imagem .placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #4a7c59, #2d5016);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.produto-img-real {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Imagens específicas dos produtos */
+.produto-item[data-categoria="alimentos"]:nth-child(1) .placeholder {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><linearGradient id="plateGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23ffffff;stop-opacity:1" /><stop offset="100%" style="stop-color:%23f0f0f0;stop-opacity:1" /></linearGradient></defs><rect fill="%234a7c59" width="400" height="300"/><ellipse fill="url(%23plateGrad)" cx="200" cy="150" rx="120" ry="80"/><path fill="%23ff6b35" d="M150 130 Q170 120 190 130 L185 160 L155 160 Z"/><ellipse fill="%2328a745" cx="220" cy="140" rx="25" ry="15"/><ellipse fill="%2328a745" cx="210" cy="160" rx="20" ry="12"/><path fill="%23DAA520" d="M160 170 L180 165 L175 180 L165 180 Z"/><text x="200" y="250" text-anchor="middle" fill="white" font-size="20" font-family="Arial" font-weight="bold">LOW CARB</text></svg>');
+    text-indent: -9999px;
+}
+
+.produto-item[data-categoria="cosmeticos"]:nth-child(1) .placeholder {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%232d5016" width="400" height="300"/><rect fill="%23ff6b35" x="150" y="100" width="100" height="120" rx="10"/><text x="200" y="170" text-anchor="middle" fill="white" font-size="14" font-family="Arial">Shampoo</text></svg>');
+}
+
+.produto-item[data-categoria="cosmeticos"]:nth-child(2) .placeholder {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%234a7c59" width="400" height="300"/><rect fill="%23ff6b35" x="160" y="120" width="80" height="60" rx="15"/><text x="200" y="160" text-anchor="middle" fill="white" font-size="14" font-family="Arial">Sabonete</text></svg>');
+}
+
+.produto-item[data-categoria="cosmeticos"]:nth-child(3) .placeholder {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%232d5016" width="400" height="300"/><rect fill="%23DAA520" x="140" y="90" width="120" height="140" rx="12"/><circle fill="%23ff6b35" cx="200" cy="160" r="25"/><text x="200" y="250" text-anchor="middle" fill="white" font-size="12" font-family="Arial">Condicionador</text></svg>');
+}
+
+.produto-item[data-categoria="alimentos"]:nth-child(2) .placeholder {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><defs><linearGradient id="bookGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%23f5f5dc;stop-opacity:1" /><stop offset="100%" style="stop-color:%23d4af37;stop-opacity:1" /></linearGradient></defs><rect fill="%232d5016" width="400" height="300"/><rect fill="url(%23bookGrad)" x="120" y="60" width="160" height="200" rx="8"/><rect fill="%23d4af37" x="120" y="60" width="20" height="200"/><text x="200" y="140" text-anchor="middle" fill="%232d5016" font-size="16" font-family="Arial" font-weight="bold">A Psicologia</text><text x="200" y="165" text-anchor="middle" fill="%232d5016" font-size="16" font-family="Arial" font-weight="bold">da Riqueza</text><text x="200" y="190" text-anchor="middle" fill="%232d5016" font-size="16" font-family="Arial" font-weight="bold">Invisível</text><circle fill="%23ff6b35" cx="200" cy="220" r="15"/><text x="200" y="225" text-anchor="middle" fill="white" font-size="12" font-family="Arial" font-weight="bold">$</text></svg>');
+    text-indent: -9999px;
+}
+
+.produto-item[data-categoria="alimentos"]:nth-child(5) .placeholder {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%232d5016" width="400" height="300"/><circle fill="%23800080" cx="200" cy="150" r="50"/><text x="200" y="160" text-anchor="middle" fill="white" font-size="14" font-family="Arial">Açaí</text></svg>');
+}
+
+.produto-item[data-categoria="alimentos"]:nth-child(3) .placeholder {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%234a7c59" width="400" height="300"/><circle fill="%23ff4500" cx="200" cy="150" r="45"/><text x="200" y="160" text-anchor="middle" fill="white" font-size="14" font-family="Arial">Guaraná</text></svg>');
+}
+
+.produto-item[data-categoria="artesanato"]:nth-child(1) .placeholder {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%232d5016" width="400" height="300"/><path fill="%23D2691E" d="M150 120 L250 120 L240 200 L160 200 Z"/><text x="200" y="170" text-anchor="middle" fill="white" font-size="14" font-family="Arial">Cesta</text></svg>');
+}
+
+.produto-item[data-categoria="artesanato"]:nth-child(7) .placeholder {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%232d5016" width="400" height="300"/><path fill="%23D2691E" d="M150 120 L250 120 L240 200 L160 200 Z"/><text x="200" y="170" text-anchor="middle" fill="white" font-size="14" font-family="Arial">Cesta</text></svg>');
+}
+
+.produto-item[data-categoria="artesanato"]:nth-child(2) .placeholder {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%234a7c59" width="400" height="300"/><path fill="%23DEB887" d="M120 140 L280 140 L270 180 L130 180 Z M140 120 L260 120 L140 140 Z"/><text x="200" y="170" text-anchor="middle" fill="white" font-size="14" font-family="Arial">Bolsa</text></svg>');
+}
+
+.produto-item[data-categoria="oleos"]:nth-child(1) .placeholder {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%232d5016" width="400" height="300"/><ellipse fill="%23DAA520" cx="200" cy="150" rx="30" ry="80"/><text x="200" y="250" text-anchor="middle" fill="white" font-size="12" font-family="Arial">Copaíba</text></svg>');
+}
+
+.produto-item[data-categoria="oleos"]:nth-child(9) .placeholder {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%232d5016" width="400" height="300"/><ellipse fill="%23DAA520" cx="200" cy="150" rx="30" ry="80"/><text x="200" y="250" text-anchor="middle" fill="white" font-size="12" font-family="Arial">Copaíba</text></svg>');
+}
+
+.produto-item[data-categoria="oleos"]:nth-child(2) .placeholder {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300"><rect fill="%234a7c59" width="400" height="300"/><ellipse fill="%23FFD700" cx="200" cy="150" rx="30" ry="80"/><text x="200" y="250" text-anchor="middle" fill="white" font-size="12" font-family="Arial">Priprioca</text></svg>');
+}
+
+.produto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(45, 80, 22, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.produto-item:hover .produto-overlay {
+    opacity: 1;
+}
+
+.ver-detalhes {
+    background: white;
+    color: #2d5016;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.ver-detalhes:hover {
+    transform: scale(1.05);
+}
+
+.produto-info {
+    padding: 1.5rem;
+}
+
+.produto-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #2d5016;
+}
+
+.categoria {
+    color: #ff6b35;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.descricao {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.preco {
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.comprar-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6b35 0%, #ff8c5a 100%);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.comprar-btn::before {
+    content: '🛒';
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    transition: left 0.3s;
+}
+
+.comprar-btn:hover::before {
+    left: 15px;
+}
+
+.comprar-btn:hover {
+    background: linear-gradient(135deg, #e55a2b 0%, #ff6b35 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.5);
+    padding-left: 45px;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+    background: white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.close:hover {
+    color: #2d5016;
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.modal-imagem {
+    height: 400px;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+}
+
+.modal-imagem .placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #4a7c59, #2d5016);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    position: relative;
+}
+
+.modal-imagem .placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400"><defs><pattern id="leaves" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle fill="%23ffffff" opacity="0.1" cx="50" cy="50" r="20"/></pattern></defs><rect fill="url(%23leaves)" width="400" height="400"/></svg>');
+    opacity: 0.3;
+}
+
+.modal-img-real {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.modal-info {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal-info h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: #2d5016;
+}
+
+.modal-info p {
+    color: #ff6b35;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.preco-modal {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2d5016;
+    margin-bottom: 1.5rem;
+}
+
+.modal-beneficios {
+    margin: 1.5rem 0;
+}
+
+.modal-beneficios h4 {
+    color: #2d5016;
+    margin-bottom: 1rem;
+}
+
+.modal-beneficios ul {
+    list-style: none;
+    padding: 0;
+}
+
+.modal-beneficios li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #666;
+}
+
+.modal-beneficios li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2d5016;
+    font-weight: bold;
+}
+
+.comprar-btn-modal {
+    background: #ff6b35;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: auto;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+.comprar-btn-modal:hover {
+    background: #e55a2b;
+}
+
+/* Animação de filtro */
+.produto-item.hidden {
+    display: none;
+}
+
+.produto-item.show {
+    animation: fadeInUp 0.5s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .produtos-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .modal-body {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-imagem {
+        height: 250px;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .modal-info {
+        padding: 1.5rem;
+    }
+    
+    .filtros-container {
+        gap: 0.5rem;
+    }
+    
+    .filtro-btn {
+        padding: 10px 16px;
+        font-size: 0.9rem;
+    }
+}
